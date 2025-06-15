@@ -1,5 +1,13 @@
+import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const app = express();
+app.use(express.static(path.join(__dirname, "../client")));
 
 const httpServer = createServer();
 const io = new Server(httpServer, {
@@ -78,6 +86,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3000, () => {
-  console.log("Server listening on http://localhost:3000");
+httpServer.listen(1234, () => {
+  console.log("Server listening on http://localhost:1234");
 });

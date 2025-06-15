@@ -1,7 +1,7 @@
 import * as PIXI from "https://cdn.jsdelivr.net/npm/pixi.js@7.3.2/+esm";
 import { io } from "https://cdn.socket.io/4.7.5/socket.io.esm.min.js";
 
-const socket = io("http://localhost:3000");
+const socket = io("http://localhost:1234");
 
 // Pixi 기본 설정
 const app = new PIXI.Application({
